@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores</title>
+</head>
+<body>
+    <h2>Nombre del autor</h2>
+    <p>Id del autor</p>
+
+    {% if autor %}
+        <h2>Nombre del autor: {{ autor.nombre }}</h2>
+        <p>ID del autor: {{ autor.id }}</p>
+    {% else %}
+        <p>No se ha encontrado a ningún autor</p>
+    {% endif %}
+
+    <ul>
+        <li><a href="{% url 'home' %}">Inicio</a></li>
+        <li><a href="{% url 'books:autores_list' %}">Autores</a></li>
+        <li><a href="{% url 'books:libros_list' %}">Libros</a></li>
+        <li><a href="{% url 'books:editoriales_list' %}">Editoriales</a></li>
+        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+    </ul>
+    
+</body>
+</html>
