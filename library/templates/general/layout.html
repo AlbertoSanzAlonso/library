@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}Titulo Base{% endblock %}</title>
+</head>
+<body>
+    <main>
+        <h1>{% block page_title %}Titulo Base{% endblock %}</h1>
+        {% include "_includes/_menu_principal.html" %}
+        {% block page_content %}{% endblock %}
+    </main>
+    {% include "_includes/_footer_principal.html" %}
+</body>
+</html>
