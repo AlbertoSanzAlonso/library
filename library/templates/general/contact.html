@@ -6,4 +6,8 @@
 
 {% block page_content %}
     <p>Escríbenos a <a href="mailto: sanz_alonso84@hotmail.com">sanz_alonso84@hotmail.com</a></p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit">Enviar</button>
 {% endblock %}
