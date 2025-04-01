@@ -12,12 +12,12 @@ class Libro(models.Model):
                     "EN": 'Ingles'
                     }
 
-    idioma = models.CharField(max_length=2, choices=LANG_CHOICES, default='ES')
-    descripcion = models.TextField()
-    editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE)
+    idioma = models.CharField(max_length=2, choices=LANG_CHOICES, default='ES', null=True, blank=True)
+    descripcion = models.TextField(null=True, blank=True)
+    editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE, null=True, blank=True)
     autores = models.ManyToManyField(Autor)
-    genero = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    genero = models.CharField(max_length=100, null=True, blank=True)
+    precio = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
     def __str__(self):
         return self.titulo

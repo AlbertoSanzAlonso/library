@@ -3,8 +3,6 @@ from datetime import date
 from books.models import Autor
 
 
-
-
 def autores_view(request):
     autores = Autor.objects.all()
 
@@ -16,31 +14,10 @@ def autores_view(request):
 
 def autor_detail(request, id):
 
+    autor = Autor.objects.get(pk=id)
 
-    autores = [
-        {
-            "id": 1,
-            "nombre": "Antonio",
-            "f_nac": date(1980,8,1)
-        },
-        {
-            "id": 2,
-            "nombre": "Felipe",
-            "f_nac": date(1985,10,1)
-        },
-        {
-            "id": 3,
-            "nombre": "Matilde",
-            "f_nac": date(1990,11,5)
-        },
-    ]
-
-    for autor in autores:
-        context = {
-            "autor": None,
-        }
-        if autor['id'] == id:
-            context["autor"] = autor
-            break
+    context = {
+        'autor': autor
+    }
 
     return render(request, 'autores/autor_detail.html', context)

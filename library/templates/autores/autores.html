@@ -9,7 +9,7 @@ Lista de autores
 {% block page_content %}
     <ul>
         {% for autor in autores %}
-            <li><a href="{% url 'books:autor_detail' autor.id %}">{{ autor.id }} - {{ autor.nombre }}</a></li>
+            <li><a href="{% url 'autor:detail' autor.id %}">{{ autor.id }} - {{ autor.nombre }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

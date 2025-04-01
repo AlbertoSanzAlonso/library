@@ -10,7 +10,7 @@ class Autor(models.Model):
     email = models.EmailField()
     telefono = models.CharField(max_length=20)
     sitio_web = models.URLField()
-    premios = models.TextField()
+    premios = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre

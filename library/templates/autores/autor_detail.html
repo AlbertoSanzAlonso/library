@@ -5,12 +5,8 @@
 
 
 {% block page_content %}
-    {% if autor %}
-        <h2>Nombre del autor: {{ autor.nombre }}</h2>
-        <p>ID del autor: {{ autor.id }}</p>
-        <p>Fecha de nacimiento: {{ autor.f_nac|date:"d F, Y" }}</p>
-        <p>Volver a <a href="{% url 'books:autor_list' %}">Lista de autores</a></p>
-    {% else %}
-        <p>No se ha encontrado a ningún autor</p>
-    {% endif %}
+    <h2>Nombre del autor: {{ autor.nombre }}</h2>
+    <p>ID del autor: {{ autor.id }}</p>
+    <p>Fecha de nacimiento: {{ autor.fecha_nacimiento |date:"d F, Y" }}</p>
+    <p>Volver a <a href="{% url 'autor:list' %}">Lista de autores</a></p>
 {% endblock %}
