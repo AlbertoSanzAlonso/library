@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'books.custom_middleware.TiempoDeProcesamientoMiddleware',
 ]
 
 ROOT_URLCONF = 'library.urls'
@@ -72,6 +73,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'library.context_processor.get_current_year_context_processor',
+                'library.context_processor.get_stadistics_books',
             ],
         },
     },
@@ -113,13 +116,24 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es'
-
+LANGUAGE_CODE = 'es-ES'
 TIME_ZONE = 'Europe/Madrid'
+USE_I18N = True # Internacionalización
+USE_L10N = True # Localización
+USE_TZ = True   # Zonas horarias
 
-USE_I18N = True
+# Opciones de idioma disponibles
 
-USE_TZ = True
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+# Ruta para los archivos de traducción
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale', 
+]
 
 
 # Static files (CSS, JavaScript, Images)

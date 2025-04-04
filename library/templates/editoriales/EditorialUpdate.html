@@ -1,17 +1,17 @@
 {% extends 'general/layout.html' %}
 
-{% block head_title %}Página de detalle de Editorial{% endblock %}
-{% block page_title %}Editorial{% endblock %}
+{% block head_title %}{% trans "Página de detalle de Editorial" %}{% endblock %}
+{% block page_title %}{% trans "Editorial" %}{% endblock %}
 
 
 {% block page_content %}
-    <h2>Editar Editorial: {{ editorial.nombre }}</h2>
+    <h2>{% blocktrans %}Editar Editorial: {{ editorial.nombre }}{% endblocktrans %}</h2>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button>Guardar</button>
-        <a href="{% url 'editorial:detail' object.pk %}">Cancelar</a>
+        <button>{% trans "Guardar" %}</button>
+        <a href="{% url 'editorial:detail' object.pk %}">{% trans "Cancelar" %}</a>
     </form>
 
-    <p>Volver a <a href="{% url 'editorial:list' %}">Lista de Editoriales</a></p>
+    <p>{% trans "Volver a" %} <a href="{% url 'editorial:list' %}">{% trans "Lista de Editoriales" %}</a></p>
 {% endblock %}

@@ -1,3 +1,12 @@
+<section>
+    <p>{% blocktrans %}Actualmente tenemos {{ n_books }} libros, {{ n_editorial }} editoriales y {{ n_autor }} autores{% endblocktrans %}</p>
+</section>
+
+<section>
+    <p>{% blocktrans %}Usuario logueado: {{ user_logged.email }}{% endblocktrans %}</p>
+</section>
+
+
 <footer>
-    <p>® 2025 - Library App - Todos los derechos reservados</p>
+    <p>® {{ current_year }} - Library App - {% trans "Todos los derechos reservados" %}</p>
 </footer>

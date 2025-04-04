@@ -5,8 +5,8 @@
 
 
 {% block page_content %}
-    <h2>Nombre del autor: {{ autor.nombre }}</h2>
-    <p>ID del autor: {{ autor.id }}</p>
-    <p>Fecha de nacimiento: {{ autor.fecha_nacimiento |date:"d F, Y" }}</p>
-    <p>Volver a <a href="{% url 'autor:list' %}">Lista de autores</a></p>
+    <h2>{% blocktrans %}Nombre del autor: {{ autor.nombre }}{% endblocktrans %}</h2>
+    <p>{% blocktrans %}ID del autor: {{ autor.id }}{% endblocktrans %}</p>
+    <p>{% blocktrans %}Fecha de nacimiento: {{ autor.fecha_nacimiento |date:"d F, Y" }}{% endblocktrans %}</p>
+    <p> {% trans "Volver a" %}<a href="{% url 'autor:list' %}">{% trans "Lista de autores" %}</a></p>
 {% endblock %}

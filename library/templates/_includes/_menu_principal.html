@@ -1,9 +1,26 @@
 <ul>
-    <li><a href="{% url 'home' %}">Inicio</a></li>
+    <li><a href="{% url 'home' %}">{% trans "Inicio" %}</a></li>
     <li><a href="{% url 'autor:list' %}">Autores</a></li>
     <li><a href="{% url 'libro:list' %}">Libros</a></li>
     <li><a href="{% url 'editorial:list' %}">Editoriales</a></li>
     <li><a href="{% url 'search' %}">Buscar</a></li>
     <li><a href="{% url 'contacto' %}">Contacto</a></li>
+
+    {% if request.user.is_authenticated %}
+        <li>{% blocktrans %}Usuario logueado: {{ request.user.email }}{% endblocktrans %}</li>
+    {% endif %}
+    
+
 </ul>
+
+
+{% if messages %}
+<section class='messages'>
+    <ul>
+        {% for message in messages  %}
+        <li class="message {{message.tags}}">{% blocktrans %}{{ message }} - Categoría: {{ message.tags }}{% endblocktrans %}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
 

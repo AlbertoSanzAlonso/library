@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 23:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: library/form.py:6
+msgid "Nombre"
+msgstr ""
+
+#: library/form.py:10
+msgid "Correo electrónico"
+msgstr ""
+
+#: library/form.py:13
+msgid "Comentario"
+msgstr ""
+
+#: library/form.py:21
+msgid "El comentario debe tener al menos 5 caracteres"
+msgstr ""
+
+#: library/templates/_includes/_footer_principal.html:2
+#, python-format
+msgid ""
+"Actualmente tenemos %(n_books)s libros, %(n_editorial)s editoriales y "
+"%(n_autor)s autores"
+msgstr ""
+
+#: library/templates/_includes/_footer_principal.html:6
+#, python-format
+msgid "Usuario logueado: %(user_logged.email)s"
+msgstr ""
+
+#: library/templates/_includes/_footer_principal.html:11
+msgid "Todos los derechos reservados"
+msgstr ""
+
+#: library/templates/_includes/_menu_principal.html:2
+msgid "Inicio"
+msgstr ""
+
+#: library/templates/_includes/_menu_principal.html:10
+#, python-format
+msgid "Usuario logueado: %(request.user.email)s"
+msgstr ""
+
+#: library/templates/_includes/_menu_principal.html:21
+#, python-format
+msgid "%(message)s - Categoría: %(message.tags)s"
+msgstr ""
+
+#: library/templates/autores/autor_detail.html:8
+#, python-format
+msgid "Nombre del autor: %(autor.nombre)s"
+msgstr ""
+
+#: library/templates/autores/autor_detail.html:9
+#, python-format
+msgid "ID del autor: %(autor.id)s"
+msgstr ""
+
+#: library/templates/autores/autor_detail.html:10
+#, python-format
+msgid "Fecha de nacimiento: %(autor.fecha_nacimiento |date:\"d F, Y\")s"
+msgstr ""
+
+#: library/templates/autores/autor_detail.html:11
+#: library/templates/editoriales/EditorialDelete.html:13
+#: library/templates/editoriales/EditorialDetail.html:17
+#: library/templates/editoriales/EditorialUpdate.html:16
+msgid "Volver a"
+msgstr ""
+
+#: library/templates/autores/autor_detail.html:11
+#: library/templates/autores/autores.html:6
+msgid "Lista de autores"
+msgstr ""
+
+#: library/templates/editoriales/EditorialCreate.html:3
+#: library/templates/editoriales/EditorialDetail.html:3
+#: library/templates/editoriales/EditorialUpdate.html:3
+msgid "Página de detalle de Editorial"
+msgstr ""
+
+#: library/templates/editoriales/EditorialCreate.html:4
+#: library/templates/editoriales/EditorialDetail.html:4
+#: library/templates/editoriales/EditorialUpdate.html:4
+msgid "Editorial"
+msgstr ""
+
+#: library/templates/editoriales/EditorialCreate.html:8
+#: library/templates/editoriales/EditorialList.html:16
+msgid "Nueva Editorial"
+msgstr ""
+
+#: library/templates/editoriales/EditorialCreate.html:12
+msgid "Crear Editorial"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDelete.html:8
+#, python-format
+msgid "¿Eliminar editorial %(editorial.nombre)s?"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDelete.html:12
+msgid "Eliminar Editorial"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDelete.html:13
+#: library/templates/editoriales/EditorialDetail.html:17
+#: library/templates/editoriales/EditorialUpdate.html:16
+msgid "Lista de Editoriales"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDetail.html:8
+#, python-format
+msgid "Nombre de la Editorial: %(editorial.nombre)s"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDetail.html:9
+#, python-format
+msgid "Dirección de la Editorial: %(editorial.direccion)s"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDetail.html:11
+msgid "Editar"
+msgstr ""
+
+#: library/templates/editoriales/EditorialDetail.html:13
+msgid "Eliminar"
+msgstr ""
+
+#: library/templates/editoriales/EditorialList.html:3
+msgid "Página de Editoriales"
+msgstr ""
+
+#: library/templates/editoriales/EditorialList.html:4
+#: library/templates/general/search.html:34
+msgid "Editoriales"
+msgstr ""
+
+#: library/templates/editoriales/EditorialList.html:8
+msgid "Lista completa de Editoriales"
+msgstr ""
+
+#: library/templates/editoriales/EditorialList.html:14
+msgid "Acciones"
+msgstr ""
+
+#: library/templates/editoriales/EditorialUpdate.html:8
+#, python-format
+msgid "Editar Editorial: %(editorial.nombre)s"
+msgstr ""
+
+#: library/templates/editoriales/EditorialUpdate.html:12
+msgid "Guardar"
+msgstr ""
+
+#: library/templates/editoriales/EditorialUpdate.html:13
+msgid "Cancelar"
+msgstr ""
+
+#: library/templates/general/contact.html:8
+msgid "Escríbenos a"
+msgstr ""
+
+#: library/templates/general/home.html:3
+msgid "Página Home"
+msgstr ""
+
+#: library/templates/general/home.html:4
+msgid "Bienvenido a nuestra página"
+msgstr ""
+
+#: library/templates/general/home.html:9
+msgid "Este es el contenido de la página HOME"
+msgstr ""
+
+#: library/templates/general/search.html:8
+msgid "Página de búsqueda"
+msgstr ""
+
+#: library/templates/general/search.html:19
+msgid "Buscar"
+msgstr ""
+
+#: library/templates/general/search.html:23
+#, python-format
+msgid "Resultados de la búsqueda para la búsqueda con %(request.GET.q)s"
+msgstr ""
+
+#: library/templates/general/search.html:31
+msgid "No se encontraron autores"
+msgstr ""
+
+#: library/templates/general/search.html:41
+msgid "No se encontraron editoriales"
+msgstr ""
+
+#: library/templates/general/search.html:44
+msgid "Libros"
+msgstr ""
+
+#: library/templates/general/search.html:52
+msgid "No se encontraron libros"
+msgstr ""
+
+#: library/views.py:11 library/views.py:56
+msgid "Mensaje enviado con éxito"
+msgstr ""
+
+#: library/views.py:12
+msgid "Se ha producido un error"
+msgstr ""

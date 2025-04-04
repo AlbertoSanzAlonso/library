@@ -1,29 +1,16 @@
 from django.shortcuts import render
 from books.models import Autor, Editorial, Libro
-from django.views.decorators.csrf import csrf_protect
 from books.forms import SearchForm
 from .form import ContactForm
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 # Vistas generales de la aplicación
 
 def home_view(request):
+    messages.info(request, _('Mensaje enviado con éxito'))
+    messages.error(request, _('Se ha producido un error'))
     return render(request, 'general/home.html')
-
-# @csrf_protect
-# def contact_view(request):
-#     if request.method == 'POST':
-#         nombre = request.POST.get('nombre')
-#         email = request.POST.get('email')
-#         comentario = request.POST.get('comentario')
-#         print(f'Se ha enviado un mensaje de {nombre} con el correo {email} con el siguiente mensaje: {comentario}')
-#         context = {
-#             'nombre': nombre,
-#             'email': email,
-#             'comentario': comentario,
-#         }
-#         return render(request, "general/contact.html", context)
-#     return render(request, "general/contact.html")
-
 
 def search_view(request):
     if request.GET:
@@ -65,8 +52,8 @@ def contact_view(request):
             print(f'Se ha enviado un mensaje de {nombre} con el correo {email} con el siguiente mensaje: {comentario}')
             context = {
                 'formulario': formulario,
-                'success': True,
             }
+            messages.info(request, _('Mensaje enviado con éxito'))
             return render(request, "general/contact.html", context)
         else:
             context = {
@@ -80,3 +67,4 @@ def contact_view(request):
         'formulario': formulario,
     }
     return render(request, "general/contact.html", context)
+

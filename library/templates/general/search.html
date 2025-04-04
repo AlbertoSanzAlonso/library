@@ -5,7 +5,7 @@
 
 
 {% block page_content %}
-    <p>Página de búsqueda</p>
+    <p>{% trans "Página de búsqueda" %}</p>
     {% comment %} <div>
         <form action="{% url 'search' %}" method="get">
             <label for="q">Introduzca su búsqueda</label>
@@ -15,11 +15,11 @@
     </div> {% endcomment %}
     <form action="{% url 'search' %}" method="get">
     {{ formulario.as_p }}
-    <button type="submit">Buscar</button>
+    <button type="submit">{% trans "Buscar" %}</button>
     </form>
     {% if request.GET.q %}
     <div>
-        <h3>Resultados de la búsqueda para la búsqueda con {{ request.GET.q }}</h3>
+        <h3>{% blocktrans %}Resultados de la búsqueda para la búsqueda con {{ request.GET.q }}{% endblocktrans %}</h3>
         <h4>Autores</h4>
         {% if autores %}
         <ul>
@@ -27,20 +27,20 @@
                 <li>{{ autor }}</li>
             {% endfor %}
         {% else %}
-            <li>No se encontraron autores</li>
+            <li>{% trans "No se encontraron autores" %}</li>
         {% endif %}
         </ul>
-        <h4>Editoriales</h4>
+        <h4>{% trans "Editoriales" %}</h4>
         {% if editoriales %}
         <ul>
             {% for editorial in editoriales %}
                 <li>{{ editorial }}</li>
             {% endfor %}
         {% else %}
-            <li>No se encontraron editoriales</li>
+            <li>{% trans "No se encontraron editoriales" %}</li>
         {% endif %}
         </ul>
-        <h4>Libros</h4>
+        <h4>{% trans "Libros" %}</h4>
         {% if libros %}
         <ul>
             {% for libro in libros %}
@@ -48,7 +48,7 @@
             {% endfor %}
         </ul>
         {% else %}
-            <li>No se encontraron libros</li>
+            <li>{% trans "No se encontraron libros" %}</li>
         {% endif %}
     </div>
     {% endif %}

@@ -5,10 +5,10 @@
 
 
 {% block page_content %}
-    <h2>¿Eliminar editorial {{ editorial.nombre }}?</h2>
+    <h2>{% blocktrans %}¿Eliminar editorial {{ editorial.nombre }}?{% endblocktrans %}</h2>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-    <button>Eliminar Editorial</button>
-    <p>Volver a <a href="{% url 'editorial:list' %}">Lista de Editoriales</a></p>
+    <button>{% trans "Eliminar Editorial" %}</button>
+    <p>{% trans "Volver a" %}<a href="{% url 'editorial:list' %}">{% trans "Lista de Editoriales" %}</a></p>
 {% endblock %}
