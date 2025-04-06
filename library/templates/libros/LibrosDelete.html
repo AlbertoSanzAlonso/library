@@ -1,14 +1,15 @@
 {% extends 'general/layout.html' %}
+{% load i18n %}
 
-{% block head_title %}Página de Libros{% endblock %}
-{% block page_title %}Libros{% endblock %}
+{% block head_title %}{% trans "Página de Libros" %}{% endblock %}
+{% block page_title %}{% trans "Libros" %}{% endblock %}
 
 
 {% block page_content %}
-    <h2>¿Eliminar Libro {{ object.titulo }}?</h2>
+    <h2>{% blocktrans %}¿Eliminar Libro {{ object.titulo }}?{% endblocktrans %}</h2>
     <form method="post">
         {% csrf_token %}
-        <p>¿Estás seguro de que quieres eliminar el libro?</p>
+        <p>{% trans "¿Estás seguro de que quieres eliminar el libro?" %}</p>
         {{ form }}
 
         <button type="submit" value="Eliminar">Eliminar</button>

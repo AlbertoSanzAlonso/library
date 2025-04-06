@@ -1,0 +1,19 @@
+{% extends 'general/layout.html' %}
+{% load i18n %}
+
+
+{% block head_title %}Página de Libros{% endblock %}
+{% block page_title %}Libros{% endblock %}
+
+
+{% block page_content %}
+    <h1>{{ libro.titulo }}</h1>
+    <h2>{% trans "Descripción" %} </h2>
+    <p>{{ libro.descripcion }}</p>
+    <a href="{% url 'libro:editar' libro.pk %}">
+        <button type="button">{% trans "Editar" %}</button>
+    </a>
+   
+    <p><a href="{% url 'libro:list' %}">{% trans "Volver a lista de libros" %}</a></p>
+    
+{% endblock %}

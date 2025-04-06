@@ -1,15 +1,16 @@
 {% extends 'general/layout.html' %}
+{% load i18n %}
 
-{% block head_title %}Página de Libros{% endblock %}
-{% block page_title %}Libros{% endblock %}
+{% block head_title %}{% trans "Página de Libros" %}{% endblock %}
+{% block page_title %}{% trans "Libros" %}{% endblock %}
 
 
 {% block page_content %}
-    <h2>Editar Libro</h2>
+    <h2>{% trans "Editar Libro" %}</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" value="Guardar"> Guardar Libro</button>
+        <button type="submit" value="Guardar">{% trans "Guardar Libro" %}</button>
     </form>
     
 {% endblock %}

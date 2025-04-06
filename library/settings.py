@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'simple_history',
+    'rosetta',
+    'modeltranslation',
 
     'books',
 ]
@@ -50,13 +52,14 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # Middleware de idioma (antes del csrf y después del Sessionmiddleware)
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'simple_history.middleware.HistoryRequestMiddleware',
     'books.custom_middleware.TiempoDeProcesamientoMiddleware',
 ]
 
@@ -69,10 +72,12 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.request',  
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',      # Para disponer de LANGUAGE_CODE en las plantillas
                 'library.context_processor.get_current_year_context_processor',
                 'library.context_processor.get_stadistics_books',
             ],
@@ -116,18 +121,28 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+
 TIME_ZONE = 'Europe/Madrid'
 USE_I18N = True # Internacionalización
 USE_L10N = True # Localización
 USE_TZ = True   # Zonas horarias
+PREFIX_DEFAULT_LANGUAGE = True # Prefijo de idioma por defecto en 
+
 
 # Opciones de idioma disponibles
 
+LANGUAGE_CODE = 'es'
 LANGUAGES = [
-    ('en', 'English'),
     ('es', 'Español'),
+    ('en', 'English'),
 ]
+
+LANGUAGE_COOKIE_NAME = 'django_language'  # Nombre de la cookie para el idioma
+
+MODEL_TRANSLATION_DEFAULT_LANGUAGE = 'es'  # Idioma por defecto para la traducción de modelos
+MODEL_TRANSLATION_LANGUAGES = ('es', 'en')  # Idiomas disponibles para la traducción de modelos
+MODEL_TRANSLATION_FALLBACKS_LANGUAGES = ('es',)  # Idiomas de reserva para la traducción de modelos
+MODEL_TRANSLATION_PREPOPULATE_LANGUAGE = 'es'  # Idioma para la población inicial de los campos traducidos
 
 # Ruta para los archivos de traducción
 

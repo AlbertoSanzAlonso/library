@@ -4,12 +4,13 @@ from books.forms import SearchForm
 from .form import ContactForm
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.utils import translation
+from django.http import HttpResponseRedirect
+from django.views.generic import View
 
 # Vistas generales de la aplicación
 
 def home_view(request):
-    messages.info(request, _('Mensaje enviado con éxito'))
-    messages.error(request, _('Se ha producido un error'))
     return render(request, 'general/home.html')
 
 def search_view(request):
@@ -68,3 +69,16 @@ def contact_view(request):
     }
     return render(request, "general/contact.html", context)
 
+class SetLanguageView(View):
+    def post(self, request, *args, **kwargs):
+        # Obtenemos el idioma seleccionado del formulario
+        language = request.POST.get('language', None)
+
+        # Si se ha seleccionado un idioma, lo activamos
+        if language:
+            translation.activate(language)
+            request.session['django_language'] = language
+        
+        # Redirigimos a la página desde donde se hizo la solicitud
+        next_url = request.POST.get('next', '/')
+        return HttpResponseRedirect(next_url)
