@@ -13,6 +13,12 @@ class Editorial(models.Model):
     sitio_web = models.EmailField(null=True, blank=True)
     fecha_fundacion = models.DateField()
     created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    LEVEL_CHOICES = (
+        ('basic', 'Basic'),
+        ('premium', 'Premium'),
+        ('enterprise', 'Enterprise'),
+    )
+    nivel = models.CharField('Nivel', max_length=10, choices=LEVEL_CHOICES, default='basic')
 
     def __str__(self):
         return self.nombre

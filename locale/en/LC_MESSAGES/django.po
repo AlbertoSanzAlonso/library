@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-05 11:38+0200\n"
-"PO-Revision-Date: 2025-04-05 11:40+0200\n"
+"POT-Creation-Date: 2025-04-07 17:06+0200\n"
+"PO-Revision-Date: 2025-04-07 17:19+0200\n"
 "Last-Translator: Alberto Sanz <sanz_alonso84@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,13 +19,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
+#: books/forms/editorial_forms.py:49 library/form.py:6
+msgid "Nombre"
+msgstr "Name"
+
+#: books/forms/editorial_forms.py:50
+msgid "Dirección"
+msgstr "Address"
+
+#: books/forms/editorial_forms.py:51
+msgid "Ciudad"
+msgstr "City"
+
+#: books/forms/editorial_forms.py:52
+msgid "Estado"
+msgstr "State"
+
+#: books/forms/editorial_forms.py:53
+msgid "País"
+msgstr "Country"
+
+#: books/forms/editorial_forms.py:54
+msgid "Código Postal"
+msgstr "Postal Code"
+
+#: books/forms/editorial_forms.py:55
+msgid "Teléfono"
+msgstr "Phone number"
+
+#: books/forms/editorial_forms.py:56
+msgid "Email"
+msgstr "Email"
+
+#: books/forms/editorial_forms.py:57
+msgid "Sitio Web"
+msgstr "Web Site"
+
+#: books/forms/editorial_forms.py:58
+msgid "Fecha de Fundación"
+msgstr "Date of foundation"
+
+#: books/forms/editorial_forms.py:59
+msgid "Nivel"
+msgstr "Level"
+
 #: books/forms/search_form.py:6
 msgid "Introduce tu búsqueda"
 msgstr "Enter your search"
-
-#: library/form.py:6
-msgid "Nombre"
-msgstr "Name"
 
 #: library/form.py:10
 msgid "Correo electrónico"
@@ -51,7 +91,7 @@ msgstr ""
 #: library/templates/_includes/_footer_principal.html:7
 #, python-format
 msgid "Usuario logueado: %(user_logged.email)s"
-msgstr "Logged in user: %(user_logged.email)s"
+msgstr "Logged user: %(user_logged.email)s"
 
 #: library/templates/_includes/_footer_principal.html:12
 msgid "Todos los derechos reservados"
@@ -91,7 +131,7 @@ msgstr "Contact"
 #: library/templates/_includes/_menu_principal.html:11
 #, python-format
 msgid "Usuario logueado: %(request.user.email)s"
-msgstr "Logged in user: %(request.user.email)s"
+msgstr "Logged user: %(request.user.email)s"
 
 #: library/templates/_includes/_menu_principal.html:26
 msgid "Cambiar idioma"
@@ -180,6 +220,7 @@ msgid "Dirección de la Editorial: %(editorial.direccion)s"
 msgstr "Publisher's Address: %(editorial.direccion)s"
 
 #: library/templates/editoriales/EditorialDetail.html:12
+#: library/templates/libros/LibrosDetail.html:14
 msgid "Editar"
 msgstr "Edit"
 
@@ -253,10 +294,8 @@ msgstr "No books found"
 #: library/templates/libros/LibrosDelete.html:4
 #: library/templates/libros/LibrosList.html:4
 #: library/templates/libros/LibrosUpdate.html:4
-#, fuzzy
-#| msgid "Página de autores"
 msgid "Página de Libros"
-msgstr "Authors Site"
+msgstr "Book Site"
 
 #: library/templates/libros/LibrosCreate.html:10
 #: library/templates/libros/LibrosList.html:19
@@ -264,10 +303,9 @@ msgid "Nuevo Libro"
 msgstr "New Book"
 
 #: library/templates/libros/LibrosDelete.html:9
-#, fuzzy, python-format
-#| msgid "¿Eliminar editorial %(editorial.nombre)s?"
+#, python-format
 msgid "¿Eliminar Libro %(object.titulo)s?"
-msgstr "Delete publisher %(editorial.nombre)s?"
+msgstr "Delete publisher %(object.titulo)s?"
 
 #: library/templates/libros/LibrosDelete.html:12
 msgid "¿Estás seguro de que quieres eliminar el libro?"
@@ -277,27 +315,25 @@ msgstr "Are you sure you want to delete the book?"
 msgid "Descripción"
 msgstr "Description"
 
+#: library/templates/libros/LibrosDetail.html:17
+msgid "Volver a lista de libros"
+msgstr "Back to books list"
+
 #: library/templates/libros/LibrosList.html:9
 msgid "Menú"
 msgstr "Menu"
 
 #: library/templates/libros/LibrosList.html:21
-#, fuzzy
-#| msgid "Lista completa de Editoriales"
 msgid "Lista completa de libros"
-msgstr "Complete list of Publishers"
+msgstr "Complete list of books"
 
 #: library/templates/libros/LibrosUpdate.html:9
-#, fuzzy
-#| msgid "Editar"
 msgid "Editar Libro"
-msgstr "Edit"
+msgstr "Edit Book"
 
 #: library/templates/libros/LibrosUpdate.html:13
-#, fuzzy
-#| msgid "Guardar"
 msgid "Guardar Libro"
-msgstr "Save"
+msgstr "Save Book"
 
 #: library/views.py:57
 msgid "Mensaje enviado con éxito"

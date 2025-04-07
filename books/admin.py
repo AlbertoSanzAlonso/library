@@ -44,12 +44,31 @@ class EditorialAdmin(admin.ModelAdmin):
         BookInline,
     ]
 
+def set_out_stock(modeladmin, request, queryset):
+    queryset.update(is_out_stock=True)
+    modeladmin.message_user(request, "Libros marcados como fuera de stock")
+    
+set_out_stock.short_description = "Marcar libros como fuera de stock"
+
+def export_books_to_csv(modeladmin, request, queryset):
+    import csv
+    from django.http import HttpResponse
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=libros.csv'
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Titulo', 'ISBN', 'Editorial'])
+    for libro in queryset:
+        writer.writerow([libro.id, libro.titulo, libro.isbn, libro.editorial])
+    return response
+export_books_to_csv.short_description = "Exportar libros a CSV"
 
 
 @admin.register(Libro)
 class LibroAdmin(admin.ModelAdmin):
     list_filter = ['editorial', 'idioma']
-    list_display = ('titulo', 'isbn', 'editorial', 'idioma')
+    list_display = ('titulo', 'isbn', 'editorial', 'idioma', 'is_out_stock')
     filter_horizontal = ('autores',)
+    actions = [set_out_stock, export_books_to_csv,]
    
 
